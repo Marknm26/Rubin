@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agency</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="main">
+    <img class="logo" src="./assets/images/logo.png" alt="logo">
+    <h1>We are a <span class="Creative">Creative</span> <br> Rubin Agency</h1>
+    <div class="left card"><img class="tile-image" src="./assets/images/3a21e944-8ad6-432a-b08a-a6359bf6d425.webp" alt="ChatGPT image of Rubin">
+      <h2 class="card-title">Breed</h2>
+      <p class="card-text">
+        The Rubin dog breed is a delightful and energetic breed that shares many characteristics with the well-known Miniature Pinscher but with its unique twists. This breed stands out with its vibrant, 
+        ruby-red coat that glistens in sunlight, a feature that gives the Rubin its name. They are small but sturdy, typically weighing between 8 to 12 pounds, and their sleek body is
+         often adorned with delicate white markings on the paws and chest.</p>
+    </div>
+
+    <div class="right card"><img class="tile-image" src="./assets/images/IMG_1798 2.jpg" alt="image of coral">
+      <h2 class="card-title">Nature</h2>
+      <p>Rubins are renowned for their alert and spirited nature. They are exceptionally curious, always eager to explore their surroundings, and have an abundance of energy, which makes
+         them excellent companions for active families. Despite their small size, they are
+         fearless and possess a confident demeanor that belies their stature</p>
+    </div>
+
+  </div>
+  <footer>
+    <p>Create. Develop. <span class="Bark">Bark </span>.</p>
+  </footer>
+  <script>
+    
+    // Scroll to top button
+    const scrollToTopBtn = document.createElement('button');
+    scrollToTopBtn.textContent = '↑ Top';
+    scrollToTopBtn.style.position = 'fixed';
+    scrollToTopBtn.style.bottom = '20px';
+    scrollToTopBtn.style.left = '20px'; // Moved to left bottom
+    scrollToTopBtn.style.padding = '10px 20px';
+    scrollToTopBtn.style.fontSize = '16px';
+    scrollToTopBtn.style.zIndex = '1000';
+    document.body.appendChild(scrollToTopBtn);
+
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 100) {
+        scrollToTopBtn.style.display = 'block';
+      } else {
+        scrollToTopBtn.style.display = 'none';
+      }
+    });
+    const cards = document.querySelectorAll('.card');
+    // Advanced interaction script
+    document.addEventListener('DOMContentLoaded', function() {
+      // Logo click interaction
+      document.querySelector('.logo').addEventListener('click', function() {
+        alert('Welcome to the Creative Rubin Agency! Enjoy your visit.');
+      });
+      // Enhanced card interactivity
+      document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'scale(1.1)';
+          this.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+          this.style.transition = 'transform 0.5s ease, box-shadow 0.5s ease';
+        });
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'scale(1)';
+          this.style.boxShadow = 'none';
+          this.style.transition = 'transform 0.5s ease, box-shadow 0.5s ease';
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
